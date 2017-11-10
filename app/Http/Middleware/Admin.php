@@ -16,6 +16,7 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
+        //Check if user login or not then redirect user if not logged to login page
         if (! Auth::user()->id) {
           return redirect('adminpanel/login');
         }

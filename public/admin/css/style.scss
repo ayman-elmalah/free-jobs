@@ -1,6 +1,8 @@
 //My Framework
 *{font-family: 'Cairo', sans-serif;}
-
+$primaryColor:#00a65a;
+::selection {color: white;background: $primaryColor;}
+.form-control:focus{border-color:$primaryColor}
 //Login page
 .login-box{
   width: 360px;margin: 0;position: relative;top: 50%;left: 50%;transform: translate(-50%, -50%);max-width:90%;

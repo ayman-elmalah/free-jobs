@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="{{ url('admin/css/libs/blue.css') }}">
+  <link rel="stylesheet" href="{{ url('admin/css/libs/green.css') }}">
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -58,7 +58,7 @@
             </div>
           </div>
           <div class="action-item">
-            <button type="submit" class="btn btn-primary btn-block btn-flat signin">Sign In</button>
+            <button type="submit" class="btn btn-success btn-block btn-flat signin">Sign In</button>
           </div>
         </div>
       {!! Form::close() !!}
@@ -72,8 +72,8 @@
 <script>
   $(function () {
     $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
+      checkboxClass: 'icheckbox_square-green',
+      radioClass: 'iradio_square-green',
       increaseArea: '20%'
     });
   });
