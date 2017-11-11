@@ -204,37 +204,25 @@
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-            <span class="hidden-xs">محمد شریفی</span>
+            <img src="{{ url('/admin/images/user.png') }}" class="user-image" alt="{{ Auth::user()->name }}" title="{{ Auth::user()->name }}">
+            <span class="hidden-xs"> {{ Auth::user()->name }} </span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="{{ url('/admin/images/user.png') }}" class="img-circle" alt="{{ Auth::user()->name }}" title="{{ Auth::user()->name }}">
               <p>
-               محمد شریفی - توسعه دهنده سمت کاربر
-                <small>Member since Nov. 2012</small>
+                مسئول عن الموقع
+                <small> عضو منذ {{ Auth::user()->created_at }} </small>
               </p>
-            </li>
-            <!-- Menu Body -->
-            <li class="user-body">
-              <div class="col-xs-4 text-center">
-                <a href="#">Followers</a>
-              </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Sales</a>
-              </div>
-              <div class="col-xs-4 text-center">
-                <a href="#">Friends</a>
-              </div>
             </li>
             <!-- Menu Footer-->
             <li class="user-footer">
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <a href="{{ url('/adminpanel/editprofile') }}" class="btn btn-default btn-flat profile-options"> تحديث المعلومات الشخصيه </a>
               </div>
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="{{ url('/adminpanel/logout') }}" class="btn btn-default btn-flat profile-options"> تسجيل الخروج </a>
               </div>
             </li>
           </ul>

@@ -8,19 +8,19 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <title> login | Free Jops </title>
   <link rel="shortcut icon" href="{{ url('admin/images/icon.png') }}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="{{ url('admin/css/libs/green.css') }}">
+  {!! Html::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') !!}
+  {!! Html::style('https://cdn.rtlcss.com/bootstrap/3.3.7/css/bootstrap.min.css') !!}
+  {!! Html::style('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') !!}
+  {!! Html::style('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') !!}
+  {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/css/AdminLTE.min.css') !!}
+  {!! Html::style('admin/css/libs/green.css') !!}
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cairo">
-  <link rel="stylesheet" href="{{ url('admin/css/style.css') }}">
+  {!! Html::style('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic') !!}
+  {!! Html::style('https://fonts.googleapis.com/css?family=Cairo') !!}
+  {!! Html::style('admin/css/style.css') !!}
 </head>
 <body class="hold-transition login-page" style="background-image:url({{ url('admin/images/background.jpg') }});background-size:cover;">
   <div class="login-box">
@@ -66,9 +66,9 @@
     <!-- /.login-box-body -->
   </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js') !!}
 <script>
   $(function () {
     $('input').iCheck({

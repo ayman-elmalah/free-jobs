@@ -1,5 +1,13 @@
 @extends('admin.layouts.app')
 
+@section('header')
+{!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css') !!}
+{!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.4/jquery-jvectormap.min.css') !!}
+{!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css') !!}
+{!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css') !!}
+{!! Html::style('admin/css/template/bootstrap3-wysihtml5.min.css') !!}
+@endsection
+
 @section('content')
 
 <!-- Content Header (Page header) -->
@@ -439,4 +447,18 @@
 
 </section><!-- /.content -->
 
+@endsection
+
+@section('footer')
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/jquery-sparklines/2.1.2/jquery.sparkline.min.js') !!}
+{!! Html::script('admin/js/template/jquery-jvectormap-1.2.2.min.js') !!}
+{!! Html::script('admin/js/template/jquery-jvectormap-world-mill-en.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-wysiwyg/0.3.3/amd/bootstrap3-wysihtml5.all.min.js') !!}
+{!! Html::script('admin/js/template/bootstrap3-wysihtml5.all.min.js') !!}
 @endsection
