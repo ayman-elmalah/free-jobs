@@ -30,7 +30,7 @@
       {!! Form::open(['url' => '/adminpanel/login', 'method' => 'submit']) !!}
 
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} has-feedback">
-          {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email', 'id' => 'email']) !!}
+          {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => ' البريد الالكترونى ', 'id' => 'email']) !!}
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
           @if ($errors->has('email'))
               <span class="help-block">
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} has-feedback">
-          {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'id' => 'password']) !!}
+          {!! Form::password('password', ['class' => 'form-control', 'placeholder' => ' كلمة المرور ', 'id' => 'password']) !!}
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           @if ($errors->has('password'))
               <span class="help-block">
@@ -53,12 +53,12 @@
           <div class="action-item">
             <div class="checkbox icheck">
               <label>
-                {!! Form::checkbox('remember') !!} Remember Me
+                {!! Form::checkbox('remember') !!} تذكرنى
               </label>
             </div>
           </div>
           <div class="action-item">
-            <button type="submit" class="btn btn-success btn-block btn-flat signin">Sign In</button>
+            <button type="submit" class="btn btn-success btn-block btn-flat signin"> تسجيل الدخول </button>
           </div>
         </div>
       {!! Form::close() !!}
