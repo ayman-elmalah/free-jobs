@@ -5,6 +5,9 @@ $primaryColor:#00a65a;
 .form-control:focus{border-color:$primaryColor}
 .btn{padding: 3px 8px;margin: 0 3px;}
 
+//Libraries
+.select2{width:100%;}
+
 //Nav bar
 .navbar-nav{
    .profile-options{font-size:12px;}

@@ -27,6 +27,7 @@
           <li><a href="{{ url('/adminpanel/users') }}"><i class="fa fa-circle-o"></i>  كل المسئولين </a></li>
         </ul>
       </li>
+      <li><a href="{{ url('/adminpanel/jobs') }}"><i class="fa fa-suitcase"></i> <span> كل الوظائف </span> </a></li>
     </ul>
   </section>
   <!-- /.sidebar -->

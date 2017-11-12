@@ -13,6 +13,7 @@ Route::group(['prefix' => 'adminpanel'], function () {
   Route::group(['middleware' => 'admin'], function () {
     #datatables ajax
   	Route::get('/users/data', ['as' => 'adminpanel.users.data', 'uses' => 'UsersController@anyData'] );
+  	Route::get('/jobs/data', ['as' => 'adminpanel.jobs.data', 'uses' => 'JobsController@anyData'] );
 
     //Dashboard route
     Route::get('/dashboard', 'DashboardController@index');
@@ -25,6 +26,10 @@ Route::group(['prefix' => 'adminpanel'], function () {
     //Profile routes
     Route::get('/editprofile', 'UsersController@edit');
     Route::patch('/editprofile', 'UsersController@update');
+
+    //Jobs routes
+    Route::get('/jobs', 'JobsController@index');
+    Route::get('/jobs/{id}/show', 'JobsController@show');
   });
 
   Route::get('/home', 'HomeController@index');

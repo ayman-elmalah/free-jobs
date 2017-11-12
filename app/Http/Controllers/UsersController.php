@@ -60,6 +60,9 @@ class UsersController extends Controller
     {
         $user = $user->find($id);
         $show = true;
+        if (! $user){
+          return redirect('adminpanel/users')->withFlashMessage(' عذرا . لم نجد ما تبحث عنه فى بيانات الموقع ');
+        }
         return view('admin.users.show', compact('user', 'show'));
     }
 
@@ -72,6 +75,9 @@ class UsersController extends Controller
     {
       $id = Auth::user()->id;
       $user = $user->find($id);
+      if (! $user){
+        return redirect('adminpanel/users')->withFlashMessage(' عذرا . لم نجد ما تبحث عنه فى بيانات الموقع ');
+      }
       return view('admin.users.editprofile', compact('user'));
     }
 
@@ -103,7 +109,11 @@ class UsersController extends Controller
     public function destroy($id, User $user)
     {
       if ($id != 1) {
-        $user->find($id)->delete();
+        $user = $user->find($id);
+        if (! $user){
+          return redirect('adminpanel/users')->withFlashMessage(' عذرا . لم نجد ما تبحث عنه فى بيانات الموقع ');
+        }
+        $user->delete();
         return redirect('adminpanel/users')->withFlashMessage(' تم حذف العضو بنجاح ');
       } else {
         return redirect('adminpanel/users')->withFlashMessage(' لا يمكن حذف العضو ');

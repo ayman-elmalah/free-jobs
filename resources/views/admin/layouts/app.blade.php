@@ -44,13 +44,13 @@
     {!! Html::script('https://code.jquery.com/ui/1.11.4/jquery-ui.min.js') !!}
     <script>$.widget.bridge('uibutton', $.ui.button);</script>
     {!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js') !!}
-    @yield('footer')
     {!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js') !!}
     {!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js') !!}
     {!! Html::script('admin/js/template/app.min.js') !!}
-    {!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/js/pages/dashboard.js') !!}
     {!! Html::script('admin/js/template/demo.js') !!}
     {!! Html::script('https://unpkg.com/sweetalert/dist/sweetalert.min.js') !!}
     @include('/admin/layouts/alert')
+    @yield('footer')
+    {!! Html::script('admin/js/plugin.js') !!}
   </body>
 </html>

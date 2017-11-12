@@ -461,4 +461,5 @@
 {!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js') !!}
 {!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-wysiwyg/0.3.3/amd/bootstrap3-wysihtml5.all.min.js') !!}
 {!! Html::script('admin/js/template/bootstrap3-wysihtml5.all.min.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.2/js/pages/dashboard.js') !!}
 @endsection
