@@ -1,0 +1,91 @@
+<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+    <label for="name" class="col-md-4 control-label"> الاسم </label>
+
+    <div class="col-md-6">
+        {!! Form::text('name', null, ['class' => 'form-control', 'id' => 'name', 'placeholder' => 'من فضلك اكتب اسمك ']) !!}
+        @if ($errors->has('name'))
+            <span class="help-block">
+                <strong>{{ $errors->first('name') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+    <label for="email" class="col-md-4 control-label"> البريد الالكترونى </label>
+
+    <div class="col-md-6">
+        {!! Form::email('email', null, ['class' => 'form-control', 'id' => 'email', 'placeholder' => ' من فضلك اكتب بريد الالكترونى ']) !!}
+        @if ($errors->has('email'))
+            <span class="help-block">
+                <strong>{{ $errors->first('email') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group{{ $errors->has('subject') ? ' has-error' : '' }}">
+    <label for="subject" class="col-md-4 control-label"> عنوان الرساله </label>
+
+    <div class="col-md-6">
+        {!! Form::text('subject', null, ['class' => 'form-control', 'id' => 'subject', 'placeholder' => ' من فضلك اكتب عنوان الرساله ']) !!}
+        @if ($errors->has('subject'))
+            <span class="help-block">
+                <strong>{{ $errors->first('subject') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group{{ $errors->has('message') ? ' has-error' : '' }}">
+    <label for="message" class="col-md-4 control-label"> نص الرساله </label>
+
+    <div class="col-md-6">
+      {!! Form::textarea('message', null, ['class' => 'form-control', 'id' => 'message', 'placeholder' => ' من فضلك اكتب رسالتك  ']) !!}
+
+        @if ($errors->has('message'))
+            <span class="help-block">
+                <strong>{{ $errors->first('message') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+@if (isset($show))
+<div class="form-group{{ $errors->has('view') ? ' has-error' : '' }}">
+    <label for="view" class="col-md-4 control-label"> حالة الرساله </label>
+
+    <div class="col-md-6">
+        {!! Form::select('view', messages_view(), null, ['class' => 'form-control', 'id' => 'view']) !!}
+        @if ($errors->has('view'))
+            <span class="help-block">
+                <strong>{{ $errors->first('view') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group{{ $errors->has('created_at') ? ' has-error' : '' }}">
+    <label for="created_at" class="col-md-4 control-label"> تم الارسال فى  </label>
+
+    <div class="col-md-6">
+      {!! Form::text('created_at', null, ['class' => 'form-control', 'id' => 'created_at', 'placeholder' => ' زمن ارساله الرساله ']) !!}
+
+        @if ($errors->has('created_at'))
+            <span class="help-block">
+                <strong>{{ $errors->first('created_at') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+@endif
+
+@if (! isset($show))
+<div class="form-group">
+    <div class="col-md-6 col-md-offset-4">
+        <button type="submit" class="btn btn-success">
+            <i class="fa fa-btn fa-send"></i> @yield('submit')
+        </button>
+    </div>
+</div>
+@endif

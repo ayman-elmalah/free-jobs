@@ -28,7 +28,7 @@
     <label for="experience" class="col-md-4 control-label"> الخبره المطلوبه </label>
 
     <div class="col-md-6">
-        {!! Form::select('experience', job_experience(), null, ['class' => 'form-control select2', 'id' => 'experience']) !!}
+        {!! Form::select('experience', job_experience_action(), null, ['class' => 'form-control select2', 'id' => 'experience']) !!}
         @if ($errors->has('experience'))
             <span class="help-block">
                 <strong>{{ $errors->first('experience') }}</strong>
@@ -41,7 +41,7 @@
     <label for="location" class="col-md-4 control-label"> منطقة الوظيفه </label>
 
     <div class="col-md-6">
-        {!! Form::select('location', job_location(), null, ['class' => 'form-control select2', 'id' => 'location']) !!}
+        {!! Form::select('location', job_location_action(), null, ['class' => 'form-control select2', 'id' => 'location']) !!}
         @if ($errors->has('location'))
             <span class="help-block">
                 <strong>{{ $errors->first('location') }}</strong>
@@ -54,7 +54,7 @@
     <label for="category" class="col-md-4 control-label"> قسم الوظيفه </label>
 
     <div class="col-md-6">
-        {!! Form::select('category', job_category(), null, ['class' => 'form-control select2', 'id' => 'category']) !!}
+        {!! Form::select('category', job_category_action(), null, ['class' => 'form-control select2', 'id' => 'category']) !!}
         @if ($errors->has('category'))
             <span class="help-block">
                 <strong>{{ $errors->first('category') }}</strong>

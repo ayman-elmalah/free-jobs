@@ -2,8 +2,18 @@
 *{font-family: 'Cairo', sans-serif;}
 $primaryColor:#00a65a;
 ::selection {color: white;background: $primaryColor;}
+select.form-control{padding: 0px 12px;}
 .form-control:focus{border-color:$primaryColor}
 .btn{padding: 3px 8px;margin: 0 3px;}
+textarea{resize:vertical;min-height:80px;}
+
+//Header
+.slimScrollDiv{
+  height:auto !important;max-height:200px;
+  .menu{
+    height:auto !important;max-height:200px;
+  }
+}
 
 //Libraries
 .select2{width:100%;}

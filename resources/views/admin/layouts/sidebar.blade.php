@@ -28,6 +28,8 @@
         </ul>
       </li>
       <li><a href="{{ url('/adminpanel/jobs') }}"><i class="fa fa-suitcase"></i> <span> كل الوظائف </span> </a></li>
+      <li><a href="{{ url('/adminpanel/messages') }}"><i class="fa fa-envelope"></i> <span> كل الرسائل </span> </a></li>
+      <li><a href="{{ url('/adminpanel/reports') }}"><i class="fa fa-flag-o"></i> <span> كل الابلاغات </span> </a></li>
     </ul>
   </section>
   <!-- /.sidebar -->

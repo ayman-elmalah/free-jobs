@@ -21,6 +21,27 @@ class JobsController extends Controller
   }
 
   /**
+   * Show the form for creating a new resource.
+   *
+   * @return \Illuminate\Http\Response
+   */
+  public function create()
+  {
+      //
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @param  \Illuminate\Http\Request  $request
+   * @return \Illuminate\Http\Response
+   */
+  public function store(Request $request)
+  {
+      //
+  }
+
+  /**
    * Display the specified resource.
    *
    * @param  int  $id
@@ -34,6 +55,23 @@ class JobsController extends Controller
         return redirect('adminpanel/jobs')->withFlashMessage(' عذرا . لم نجد ما تبحث عنه فى بيانات الموقع ');
       }
       return view('admin.jobs.show', compact('job', 'show'));
+  }
+
+  /**
+   * Remove the specified resource from storage.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  public function destroy($id, Job $job)
+  {
+      $job = $job->find($id);
+      if (! $job){
+        return redirect('adminpanel/jobs')->withFlashMessage(' عذرا . لم نجد ما تبحث عنه فى بيانات الموقع ');
+      }
+
+      $job->delete();
+      return redirect()->back()->withFlashMessage(' تم حذف الوظيفه بنجاح ');
   }
 
   public function anyData(Job $job)

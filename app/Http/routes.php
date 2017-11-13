@@ -14,6 +14,8 @@ Route::group(['prefix' => 'adminpanel'], function () {
     #datatables ajax
   	Route::get('/users/data', ['as' => 'adminpanel.users.data', 'uses' => 'UsersController@anyData'] );
   	Route::get('/jobs/data', ['as' => 'adminpanel.jobs.data', 'uses' => 'JobsController@anyData'] );
+  	Route::get('/messages/data', ['as' => 'adminpanel.messages.data', 'uses' => 'MessagesController@anyData'] );
+  	Route::get('/reports/data', ['as' => 'adminpanel.reports.data', 'uses' => 'ReportsController@anyData'] );
 
     //Dashboard route
     Route::get('/dashboard', 'DashboardController@index');
@@ -30,6 +32,17 @@ Route::group(['prefix' => 'adminpanel'], function () {
     //Jobs routes
     Route::get('/jobs', 'JobsController@index');
     Route::get('/jobs/{id}/show', 'JobsController@show');
+    Route::get('/jobs/{id}/delete', 'JobsController@destroy');
+
+    //Messages routes
+    Route::get('/messages', 'MessagesController@index');
+    Route::get('/messages/{id}/show', 'MessagesController@show');
+    Route::get('/messages/{id}/delete', 'MessagesController@destroy');
+
+    //Reports routes
+    Route::get('/reports', 'ReportsController@index');
+    Route::get('/reports/{id}/show', 'ReportsController@show');
+    Route::get('/reports/{id}/delete', 'ReportsController@destroy');
   });
 
   Route::get('/home', 'HomeController@index');
