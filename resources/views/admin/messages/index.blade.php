@@ -4,6 +4,9 @@
 {!! Html::style('admin/datatables/dataTables.bootstrap.css') !!}
 @endsection
 
+@section('title') {{ title('كل الرسائل') }} @endsection
+@section('description') {{ description() }} @endsection
+
 @section('content')
   <!-- Content Header (Page header) -->
   <section class="content-header">

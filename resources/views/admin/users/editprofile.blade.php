@@ -1,5 +1,8 @@
 @extends('admin.layouts.app')
 
+@section('title') {{ title('تعديل معلوماتى الشخصيه') }} @endsection
+@section('description') {{ description() }} @endsection
+
 @section('submit')
   تعديل
 @endsection

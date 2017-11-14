@@ -4,6 +4,9 @@
   {!! Html::style('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css') !!}
 @endsection
 
+@section('title') {{ title(' عرض بيانات الوظيفه'  . $job->title) }} @endsection
+@section('description') {{ description() }} @endsection
+
 @section('content')
   <!-- Content Header (Page header) -->
   <section class="content-header">

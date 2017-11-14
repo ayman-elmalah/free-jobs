@@ -144,9 +144,9 @@ function messages_view() {
   ];
 }
 
-function countAllUnreadMessage() {
-  //Count number of unread messages
-  $count = \App\Message::where('view', 0)->count();
+function countMessagesAppendToStatus($status = 0) {
+  //Count number of messages append to status
+  $count = \App\Message::where('view', $status)->count();
   return $count == 0 ? 0 : $count;
 }
 
@@ -164,15 +164,45 @@ function reports_view() {
   ];
 }
 
-function countAllUnreadReports() {
-  //Count number of unread reports
-  $count = \App\Report::where('view', 0)->count();
+function countReportsAppendToStatus($status = 0) {
+  //Count number reports append to status
+  $count = \App\Report::where('view', $status)->count();
   return $count == 0 ? 0 : $count;
 }
 
 function getLatestUnreadReports($count = 10) {
   //Get all unread reports
   return \App\Report::where('view', 0)->take($count)->orderBy('id', 'desc')->join('jobs', 'jobs.id', '=', 'reports.job_id')->select('reports.*', 'jobs.title')->get();
+}
+
+function countNumberOfJobs() {
+  //Count all number of jobs
+  return \App\Job::count();
+}
+
+function countNumberOfMessages() {
+  //Count all number of messages
+  return countMessagesAppendToStatus(0) + countMessagesAppendToStatus(1);
+}
+
+function countNumberOfUsers() {
+  //Count all number of users
+  return \App\User::count();
+}
+
+function countNumberOfReports() {
+  //Count all number of messages
+  return countReportsAppendToStatus(0) + countReportsAppendToStatus(1);
+}
+
+function getLatestReports($take = 5) {
+  //Get latest reports to be shown in dashboard
+  return \App\Report::join('jobs', 'jobs.id', '=', 'reports.job_id')->select('reports.*', 'jobs.title')->take($take)->orderBy('id', 'desc')->get();
+}
+
+function getLatestJobs($take = 4) {
+  //Get latest jobs to be shown in dashboard
+  return \App\Job::take($take)->orderBy('id', 'desc')->get();
 }
 
 function showSinceTime($time) {
@@ -184,4 +214,25 @@ function showSinceTime($time) {
   } else {
     return $time;
   }
+}
+
+function title($title, $site_name = 'Free Jobs') {
+  //Set and get title name
+  return str_limit($title . ' | ' . $site_name, 60);
+}
+
+function description($description = null) {
+  //Set and get description for page
+  $description = $description ?: 'الموقع يهدف الى نشر الوظائف المتاحه فى جمهوريه مصر العربيه لجميع اقسام العمل المتاحه . ولدينا طريقه لتقييم الوظائف لاظهار فقط الوظائف الموثوق فيها للزوار ';
+  return str_limit($description, 160);
+}
+
+function copy_right_link(){
+  //Copy right link
+  return 'http://elmalah.esy.es';
+}
+
+function copy_right_name(){
+  //Copy right name
+  return ' أيمن الملاح ';
 }

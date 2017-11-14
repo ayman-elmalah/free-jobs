@@ -1,5 +1,8 @@
 @extends('admin.layouts.app')
 
+@section('title') {{ title('عرض رسالة ' . $message->name) }} @endsection
+@section('description') {{ description() }} @endsection
+
 @section('content')
   <!-- Content Header (Page header) -->
   <section class="content-header">

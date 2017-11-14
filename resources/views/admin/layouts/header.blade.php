@@ -18,15 +18,15 @@
         <li class="dropdown messages-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-envelope-o"></i>
-            @if (countAllUnreadMessage() > 0)
-            <span class="label label-info">{{ countAllUnreadMessage() }}</span>
+            @if (countMessagesAppendToStatus() > 0)
+            <span class="label label-info">{{ countMessagesAppendToStatus() }}</span>
             @endif
           </a>
           <ul class="dropdown-menu">
-            @if (countAllUnreadMessage() > 0)
-              <li class="header"> لديك {{ countAllUnreadMessage() }} رسائل لم يتم الرد عليهم </li>
+            @if (countMessagesAppendToStatus() > 0)
+              <li class="header"> لديك {{ countMessagesAppendToStatus() }} رسائل لم يتم الرد عليهم </li>
             @else
-              <li class="header"> لا يوجد رسائل لم يتم الرد عليها </li>
+              <li class="header"> لا يوجد رسائل لم تتم مشاهدتها </li>
             @endif
             <li>
               <!-- inner menu: contains the actual data -->
@@ -55,13 +55,13 @@
         <li class="dropdown tasks-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-flag-o"></i>
-            @if (countAllUnreadReports() > 0)
-            <span class="label label-danger">{{ countAllUnreadReports() }}</span>
+            @if (countReportsAppendToStatus() > 0)
+            <span class="label label-danger">{{ countReportsAppendToStatus() }}</span>
             @endif
           </a>
           <ul class="dropdown-menu">
-            @if (countAllUnreadReports() > 0)
-              <li class="header"> لديك {{ countAllUnreadReports() }} ابلاغات لم تتم قرائتهم </li>
+            @if (countReportsAppendToStatus() > 0)
+              <li class="header"> لديك {{ countReportsAppendToStatus() }} ابلاغات لم تتم قرائتهم </li>
             @else
               <li class="header"> لا يوجد ابلاغات لم تتم قرائتها </li>
             @endif
@@ -111,10 +111,6 @@
               </div>
             </li>
           </ul>
-        </li>
-        <!-- Control Sidebar Toggle Button -->
-        <li>
-          <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
         </li>
       </ul>
     </div>

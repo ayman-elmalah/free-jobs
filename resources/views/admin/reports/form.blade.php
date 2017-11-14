@@ -68,6 +68,22 @@
     </div>
 </div>
 
+<div class="form-group{{ $errors->has('visit') ? ' has-error' : '' }}">
+    <label for="visit" class="col-md-4 control-label"> مشاهدة الوظيفه </label>
+
+    <div class="col-md-6">
+      <a href="{{ url('/adminpanel/jobs/' . $report->job_id . '/show') }}" class="link-control">
+        {{ $report->title }}
+      </a>
+
+        @if ($errors->has('visit'))
+            <span class="help-block">
+                <strong>{{ $errors->first('visit') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
 <div class="form-group{{ $errors->has('delete') ? ' has-error' : '' }}">
     <label for="delete" class="col-md-4 control-label"> حذف الابلاغ  </label>
 

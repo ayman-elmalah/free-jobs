@@ -1,5 +1,8 @@
 @extends('admin.layouts.app')
 
+@section('title') {{ title('كل المسئولين') }} @endsection
+@section('description') {{ description() }} @endsection
+
 @section('header')
 {!! Html::style('admin/datatables/dataTables.bootstrap.css') !!}
 @endsection

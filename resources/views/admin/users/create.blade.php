@@ -1,5 +1,8 @@
 @extends('admin.layouts.app')
 
+@section('title') {{ title('اضافة مسئول') }} @endsection
+@section('description') {{ description() }} @endsection
+
 @section('submit')
   اضافه
 @endsection
