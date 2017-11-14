@@ -12,7 +12,7 @@ class ReportSeeder extends Seeder
     public function run()
     {
         DB::table('reports')->insert([
-          'job_id' => ' 3 ',
+          'job_id' => ' 12 ',
           'name' => ' راضى ',
           'report' => ' وظيفه غير موثوق فيها واعتقد ان الناشر يقوم بنشر الكثير من الوظائف ',
           'view' => '0',

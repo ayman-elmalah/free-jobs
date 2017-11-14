@@ -71,7 +71,7 @@ class JobsController extends Controller
       }
 
       $job->delete();
-      return redirect()->back()->withFlashMessage(' تم حذف الوظيفه بنجاح ');
+      return redirect('adminpanel/jobs')->withFlashMessage(' تم حذف الوظيفه بنجاح ');
   }
 
   public function anyData(Job $job)

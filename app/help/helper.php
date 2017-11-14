@@ -1,6 +1,7 @@
 <?php
 
 function job_category() {
+  //Show job categories for show page
   return [
     '' => ' قسم الوظيفه ',
     '11' => ' مبرمجين ',
@@ -25,6 +26,7 @@ function job_category() {
 }
 
 function job_experience() {
+  //Show experiences for show page
   return [
     '' => ' الخبره المطلوبه ',
     '1' => ' مبتدأ ',
@@ -34,6 +36,7 @@ function job_experience() {
 }
 
 function job_location() {
+  //Show loactions for show page
   return [
     "" => " المنطقه ",
     "11" => "القاهره",
@@ -67,6 +70,7 @@ function job_location() {
 }
 
 function job_category_action() {
+  //Show job categories for action page, like add
   return [
     '11' => ' مبرمجين ',
     '12' => ' مصممين جرافيك ',
@@ -90,6 +94,7 @@ function job_category_action() {
 }
 
 function job_experience_action() {
+  //Show experiences for action page, like add
   return [
     '1' => ' مبتدأ ',
     '2' => ' متوسط ',
@@ -98,6 +103,7 @@ function job_experience_action() {
 }
 
 function job_location_action() {
+  //Show locations for action page, like add
   return [
     "11" => "القاهره",
     "12" => "الجيزة",
@@ -130,6 +136,7 @@ function job_location_action() {
 }
 
 function messages_view() {
+  //Show messages view type for show page
   return [
     '' => ' كل الرسائل ',
     '0' => ' رسائل غير مقروءه ',
@@ -138,15 +145,18 @@ function messages_view() {
 }
 
 function countAllUnreadMessage() {
+  //Count number of unread messages
   $count = \App\Message::where('view', 0)->count();
   return $count == 0 ? 0 : $count;
 }
 
 function getLatestUnreadMessage($count = 10) {
+  //Get all unread messages
   return \App\Message::where('view', 0)->take($count)->orderBy('id', 'desc')->get();
 }
 
 function reports_view() {
+  //Show reports view type for show page
   return [
     '' => ' كل الابلاغات ',
     '0' => ' ابلاغ غير مقروء ',
@@ -155,10 +165,23 @@ function reports_view() {
 }
 
 function countAllUnreadReports() {
+  //Count number of unread reports
   $count = \App\Report::where('view', 0)->count();
   return $count == 0 ? 0 : $count;
 }
 
 function getLatestUnreadReports($count = 10) {
-  return \App\Report::where('view', 0)->take($count)->orderBy('id', 'desc')->get();
+  //Get all unread reports
+  return \App\Report::where('view', 0)->take($count)->orderBy('id', 'desc')->join('jobs', 'jobs.id', '=', 'reports.job_id')->select('reports.*', 'jobs.title')->get();
+}
+
+function showSinceTime($time) {
+  //Show since time of publish like since 1 minute, 2 hours, ,,
+  if ((time() - strtotime($time)) < 3600) {
+    return ' منذ ' . ceil((time() - strtotime($time)) / 60) . ' دقيقه';
+  } else if (((time() - strtotime($time)) >= 3600) && ((time() - strtotime($time)) < 86400)) {
+    return 'منذ ' . ceil((time() - strtotime($time)) / 3600) . ' ساعه';
+  } else {
+    return $time;
+  }
 }

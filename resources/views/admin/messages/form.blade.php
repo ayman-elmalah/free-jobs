@@ -78,6 +78,20 @@
         @endif
     </div>
 </div>
+
+<div class="form-group{{ $errors->has('delete') ? ' has-error' : '' }}">
+    <label for="delete" class="col-md-4 control-label"> حذف الرساله  </label>
+
+    <div class="col-md-6">
+      <a href="{{ url('/adminpanel/messages/' . $message->id . '/delete') }}" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>
+
+        @if ($errors->has('delete'))
+            <span class="help-block">
+                <strong>{{ $errors->first('delete') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
 @endif
 
 @if (! isset($show))

@@ -75,7 +75,7 @@ class ReportsController extends Controller
       }
 
       $report->delete();
-      return redirect()->back()->withFlashMessage(' تم حذف الابلاغ بنجاح ');
+      return redirect('adminpanel/reports')->withFlashMessage(' تم حذف الابلاغ بنجاح ');
     }
 
     public function anyData(Report $report)

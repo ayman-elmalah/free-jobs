@@ -74,22 +74,21 @@ class MessagesController extends Controller
         }
 
         $message->delete();
-        return redirect()->back()->withFlashMessage(' تم حذف الرساله بنجاح ');
+        return redirect('adminpanel/messages')->withFlashMessage(' تم حذف الرساله بنجاح ');
     }
 
     public function anyData(Message $message)
     {
       $message = $message->all();
       return DataTables::of($message)
-        ->editColumn('name', function ($model) {
-          return \Html::link('/adminpanel/messages/' . $model->id . '/show', $model->name);
-        })
         ->editColumn('view', function ($model) {
           $view = messages_view();
           return '<span class="badge badge-info">' . $view[$model->view] . '</span>';
         })
         ->editColumn('control', function ($model) {
-          return '<a href="'.url('/adminpanel/messages/' . $model->id . '/delete').'" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>';
+          $all = '<a href="'.url('/adminpanel/messages/' . $model->id . '/show').'" class="btn btn-info btn-circle"><i class="fa fa-eye"></i></a>';
+          $all .= '<a href="'.url('/adminpanel/messages/' . $model->id . '/delete').'" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>';
+          return $all;
         })
         ->make(true);
     }

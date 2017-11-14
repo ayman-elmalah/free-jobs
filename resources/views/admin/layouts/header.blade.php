@@ -40,11 +40,7 @@
                     <h4>
                       {{ $message->subject }}
 
-                      @if ((time() - strtotime($message->created_at)) < 3600)
-                        <small><i class="fa fa-clock-o"></i> منذ {{ ceil((time() - strtotime($message->created_at)) / 60) }} دقيقه</small>
-                      @else
-                        <small><i class="fa fa-clock-o"></i>{{ $message->created_at }}</small>
-                      @endif
+                        <small><i class="fa fa-clock-o"></i> {{ showSinceTime($message->created_at) }} </small>
                     </h4>
                     <p>{{ str_limit($message->message, 30) }}</p>
                   </a>
@@ -75,7 +71,13 @@
                 @foreach(getLatestUnreadReports() as $report)
                 <li>
                   <a href="{{ url('adminpanel/reports/' . $report->id . '/show') }}">
-                    <i class="fa fa-users text-aqua"></i> {{ str_limit($report->report, 30) }}
+                    <h4 class="report-header">
+                      {{ $report->title }}
+                        <small><i class="fa fa-clock-o"></i> {{ showSinceTime($report->created_at) }} </small>
+                    </h4>
+                    <div class="report">
+                         {{ str_limit($report->report, 30) }}
+                    </div>
                   </a>
                 </li>
                 @endforeach
