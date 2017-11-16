@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="description">
+  <meta name="description" content="{{ description() }}">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <title> login | Free Jops </title>
+  <title> {{ title('تسجيل الدخول') }} </title>
   <link rel="shortcut icon" href="{{ url('admin/images/icon.png') }}">
   {!! Html::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') !!}
   {!! Html::style('https://cdn.rtlcss.com/bootstrap/3.3.7/css/bootstrap.min.css') !!}

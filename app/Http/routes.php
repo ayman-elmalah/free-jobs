@@ -44,12 +44,8 @@ Route::group(['prefix' => 'adminpanel'], function () {
     Route::get('/reports/{id}/show', 'ReportsController@show');
     Route::get('/reports/{id}/delete', 'ReportsController@destroy');
   });
-
-  Route::get('/home', 'HomeController@index');
-
 });
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//Main Webiste routes
+Route::get('/', 'HomeController@index');
+Route::get('/home', 'HomeController@index');
