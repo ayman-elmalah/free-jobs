@@ -236,3 +236,14 @@ function copy_right_name(){
   //Copy right name
   return ' أيمن الملاح ';
 }
+
+function clean_name($name) {
+  //Generate clean url name
+  $name = trim($name);
+  // replace any multi white spaces with just one white space
+  $name = preg_replace('#[\s]+#', ' ', $name);
+  // replace white spaces with dash
+  $name = str_replace(' ', '-', $name);
+  // make all letters in small case letters and trim any dashes
+  return trim($name, '-');
+}

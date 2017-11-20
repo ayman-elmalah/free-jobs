@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Job;
 use Datatables;
+use App\Http\Requests\AddJob;
+use DB;
 
 class JobsController extends Controller
 {
@@ -27,7 +29,7 @@ class JobsController extends Controller
    */
   public function create()
   {
-      //
+      return view('main.jobs.index');
   }
 
   /**
@@ -36,9 +38,20 @@ class JobsController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(Request $request)
+  public function store(AddJob $request)
   {
-      //
+    DB::table('jobs')->insert([
+      'title' => $request->title,
+      'company_name' => $request->company_name,
+      'category' => $request->category,
+      'experience' => $request->experience,
+      'location' => $request->location,
+      'description' => $request->description,
+      'email_address' => $request->email_address,
+      'created_at' => time(),
+    ]);
+
+    return redirect('/')->withFlashMessage(' تم نشر الوظيفه بنجاح ');
   }
 
   /**

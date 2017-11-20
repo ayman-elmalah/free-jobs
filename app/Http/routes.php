@@ -47,5 +47,17 @@ Route::group(['prefix' => 'adminpanel'], function () {
 });
 
 //Main Webiste routes
+//Home page
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
+
+//Categories page
+Route::get('/categories', 'CategoriesController@index');
+
+//Contact page
+Route::get('/contact', 'ContactController@index');
+Route::post('/contact/submit', 'ContactController@submit');
+
+//Contact page
+Route::get('/post', 'JobsController@create');
+Route::post('/post/submit', 'JobsController@store');

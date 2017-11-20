@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Job;
 
 class HomeController extends Controller
 {
@@ -13,8 +14,11 @@ class HomeController extends Controller
    *
    * @return \Illuminate\Http\Response
    */
-  public function index()
+  public function index(Job $job)
   {
-    return view('main.home.index');
+    $jobs = $job->orderBy('id', 'desc')->paginate(24);
+    $count = $jobs->count();
+    $homepage = true;
+    return view('main.home.index', compact('jobs', 'count', 'homepage'));
   }
 }

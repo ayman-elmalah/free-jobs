@@ -63,20 +63,6 @@
     </div>
 </div>
 
-<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-    <label for="description" class="col-md-4 control-label"> وصف الوظيفه </label>
-
-    <div class="col-md-6">
-      {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'editor1', 'placeholder' => ' من فضلك اكتب المواصفات اللازمه للوظيفه ']) !!}
-
-        @if ($errors->has('description'))
-            <span class="help-block">
-                <strong>{{ $errors->first('description') }}</strong>
-            </span>
-        @endif
-    </div>
-</div>
-
 <div class="form-group{{ $errors->has('email_address') ? ' has-error' : '' }}">
     <label for="email_address" class="col-md-4 control-label"> البريد الالكترونى للتقديم </label>
 
@@ -86,6 +72,20 @@
         @if ($errors->has('email_address'))
             <span class="help-block">
                 <strong>{{ $errors->first('email_address') }}</strong>
+            </span>
+        @endif
+    </div>
+</div>
+
+<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+    <label for="description" class="col-md-4 control-label"> وصف الوظيفه </label>
+
+    <div class="col-md-6">
+      {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'editor1', 'placeholder' => ' من فضلك اكتب المواصفات اللازمه للوظيفه ']) !!}
+
+        @if ($errors->has('description'))
+            <span class="help-block">
+                <strong>{{ $errors->first('description') }}</strong>
             </span>
         @endif
     </div>

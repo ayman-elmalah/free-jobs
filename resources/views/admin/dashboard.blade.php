@@ -133,7 +133,7 @@
               <div class="product-info">
                 <a href="{{ url('adminpanel/jobs/' . $job->id . '/show') }}" class="product-title"> {{ $job->title }} </a>
                 <span class="product-description">
-                  {{ str_limit($job->description, 40) }}
+                  {{ strip_tags(str_limit($job->description, 40)) }}
                 </span>
               </div>
             </li><!-- /.item -->
