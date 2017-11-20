@@ -87,6 +87,7 @@ class JobsController extends Controller
       return redirect('adminpanel/jobs')->withFlashMessage(' تم حذف الوظيفه بنجاح ');
   }
 
+  //Show all data to datatables
   public function anyData(Job $job)
   {
     $job = $job->all();
@@ -110,5 +111,36 @@ class JobsController extends Controller
         return '<a href="'.url('/adminpanel/jobs/' . $model->id . '/delete').'" class="btn btn-danger btn-circle"><i class="fa fa-trash-o"></i></a>';
       })
       ->make(true);
+  }
+
+  //Show search page
+  public function search(Request $request, Job $job) {
+    $requestAll = array_except($request->toArray(), ['submit', '_token', 'page']);
+
+    $query = $job->select('*');
+
+    foreach ($requestAll as $key => $req) {
+      if ($req != '') {
+        if ($key == 'title') {
+            $query->where($key, 'LIKE' , '%'.$req.'%');
+        } else {
+            $query->where($key, $req);
+        }
+      }
+    }
+
+    $search = true;
+    $jobs = $query->orderBy('id', 'desc')->paginate(24);
+    $count = $jobs->count();
+    return view('main.search.index', compact('jobs', 'search', 'count'));
+  }
+
+  //Show job details
+  public function job($id, $title, Job $job) {
+    $job = $job->find($id);
+    if (! $job){
+      return redirect('/')->withFlashMessage(' عذرا . لم نجد ما تبحث عنه فى بيانات الموقع ');
+    }
+    return view('main.jobs.show', compact('job'));
   }
 }

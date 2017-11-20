@@ -61,3 +61,9 @@ Route::post('/contact/submit', 'ContactController@submit');
 //Contact page
 Route::get('/post', 'JobsController@create');
 Route::post('/post/submit', 'JobsController@store');
+
+//Search page
+Route::get('/search', 'JobsController@search');
+
+//Job page
+Route::get('/job/{id}/{title}', 'JobsController@job');

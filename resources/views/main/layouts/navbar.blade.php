@@ -15,8 +15,8 @@
     <div class="collapse navbar-collapse" id="mynav">
       <ul class="nav navbar-nav navbar-left">
           <li class="nav-list"><a class="link" href="{{ url('/home') }}"> الصفحه الرئيسيه </a></li>
-          <li class="nav-list"><a class="link active" href="{{ url('/categories') }}"> كل الاقسام </a></li>
-          <li class="nav-list"><a class="link" href="{{ url('/contact') }}"> اتصل بنا </a></li>
+          <li class="nav-list"><a class="link @if (Request::segment(1) == 'categories') {{'active'}} @endif" href="{{ url('/categories') }}"> كل الاقسام </a></li>
+          <li class="nav-list"><a class="link @if (Request::segment(1) == 'contact') {{'active'}} @endif" href="{{ url('/contact') }}"> اتصل بنا </a></li>
           <li class="btn btn-success nav-custom-list"><a class="link" href="{{ url('/post') }}"> نشر وظيفه </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

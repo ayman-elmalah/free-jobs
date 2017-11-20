@@ -123,6 +123,15 @@ textarea{resize:vertical;min-height:80px;}
   }
 }
 
+.content{
+  .jobs-content{
+    padding:0;
+    .jobs{
+      padding:0;
+    }
+  }
+}
+
 //Categorycontent
 .category-box{
   background-color: #fff;border: 1px solid #ccc;box-shadow: -1px 1px 1px #ccc;margin:5px 0;
@@ -133,3 +142,21 @@ textarea{resize:vertical;min-height:80px;}
 
 //Site content
 .content{padding:60px 0;}
+
+//Job page
+.job-heading-box{
+  background-color: #fff;padding: 15px;box-shadow: -2px 3px 2px #ccc;border: 1px solid #ccc;border-radius: 3px;
+  .line{
+    font-size: 17px;padding: 10px 0;
+    .title{color:$primaryColor;}
+  }
+}
+.job-description-box{
+  background-color: #fff;padding: 15px;box-shadow: -2px 3px 2px #ccc;border: 1px solid #ccc;border-radius: 3px;
+  margin:40px 0;font-size: 17px;
+  .heading{color:$primaryColor;text-align: center;margin:30px 0}
+}
+.ad{
+  margin:50px 0;
+  img{max-width:100%;width:100%;max-height:130px;}
+}

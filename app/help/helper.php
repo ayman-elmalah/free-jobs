@@ -208,9 +208,9 @@ function getLatestJobs($take = 4) {
 function showSinceTime($time) {
   //Show since time of publish like since 1 minute, 2 hours, ,,
   if ((time() - strtotime($time)) < 3600) {
-    return ' منذ ' . ceil((time() - strtotime($time)) / 60) . ' دقيقه';
+    return ' منذ ' . floor((time() - strtotime($time)) / 60) . ' دقيقه';
   } else if (((time() - strtotime($time)) >= 3600) && ((time() - strtotime($time)) < 86400)) {
-    return 'منذ ' . ceil((time() - strtotime($time)) / 3600) . ' ساعه';
+    return 'منذ ' . floor((time() - strtotime($time)) / 3600) . ' ساعه';
   } else {
     return $time;
   }
